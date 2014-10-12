@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html, body {
+  position:       relative;
+  min-height:     100%;
+  height:         100%;
+}
+body {
+  font:           20px/1.1em Lato, Helvetica, Arial, sans-serif;
+  font-weight:    300;
+  margin:         0;
+  padding:        0;
+}
+
+/* highscore */
+
+#points {
+  position:       absolute;
+  top:            50px;
+  left:           0;
+  opacity:        0.5;
+  width:          150px;
+  text-align:     center;
+}
+#points:hover {
+  opacity:        1;
+}
+#points h1 {
+  font-size:      40px;
+  font-weight:    100;
+  margin:         0 0 14px;
+}
+#points p {
+  margin:         0;
+}
+
+/* main stage, typical layout (basically a table):
+
+  #field
+    .row
+      .cell
+      .cell
+      ...
+      .cell:last-child
+    ...
+    .row:last-child
+      .cell
+      .cell
+      .cell:last-child
+*/
+
+
+#field {
+  /* vertically centered, variable height */
+  position:       relative;
+  top:            50%;
+  transform:      translateY(-50%);
+  /* horizontally centererd, fixed width */
+  width:          800px;
+  margin:         0 auto;
+}
+#field .row {
+  text-align:     center;
+  margin:         0;
+}
+#field .row .cell:last-child {
+  margin-right:   0;
+}
+#field .row:last-child .cell {
+  margin-bottom:  0;
+}
+#field .cell {
+  display:        inline-block;
+}
+#field .cell.target {
+  -webkit-transition: transform 500ms ease;
+  -moz-transition:    transform 500ms ease;
+  -ms-transition:     transform 500ms ease;
+  -o-transition:      transform 500ms ease;
+  transition:         transform 500ms ease;
+  transform:          scale(1) rotate(0deg);
+}
+#field.game-over .target {
+  transform:          scale(1.1) rotate(3deg);
+}

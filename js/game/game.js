@@ -46,8 +46,8 @@ window.Game = (function(){
   };
 
   var sounds = (new Audio()).canPlayType("audio/mpeg") ? {
-    chirp:  new Audio("/snd/chirp.mp3"),
-    kick:   new Audio("/snd/kick.mp3")
+    chirp:  new Audio("./snd/chirp.mp3"),
+    kick:   new Audio("./snd/kick.mp3")
   } : null
 
   Game.prototype.playSound = function(name) {

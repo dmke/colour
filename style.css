@@ -4,8 +4,9 @@ html, body {
   position:       relative;
   min-height:     100%;
   height:         100%;
+  min-width:      960px;
 }
-body {
+body, button {
   font:           20px/1.1em Lato, Helvetica, Arial, sans-serif;
   font-weight:    300;
   margin:         0;
@@ -34,6 +35,33 @@ body {
   margin:         0;
 }
 
+/* controls */
+
+#difficulty {
+  position:       absolute;
+  top:            150px;
+  left:           0;
+  width:          150px;
+}
+#difficulty button,
+#difficulty button:active {
+  background:     transparent;
+  color:          #ccc;
+  width:          140px;
+  text-align:     center;
+  padding:        5px;
+  margin:         5px;
+  border:         0;
+  outline:        0;
+  cursor:         pointer;
+}
+#difficulty button.current,
+#difficulty button:hover {
+  background:     #efefef;
+  color:          #000;
+}
+
+
 /* main stage, typical layout (basically a table):
 
   #field
@@ -52,12 +80,16 @@ body {
 
 #field {
   /* vertically centered, variable height */
-  position:       relative;
-  top:            50%;
-  transform:      translateY(-50%);
+  position:           relative;
+  top:                50%;
+  -webkit-transform:  translateY(-50%) translateX(80px);
+  -moz-transform:     translateY(-50%) translateX(80px);
+  -ms-transform:      translateY(-50%) translateX(80px);
+  -o-transform:       translateY(-50%) translateX(80px);
+  transform:          translateY(-50%) translateX(80px);
   /* horizontally centererd, fixed width */
-  width:          800px;
-  margin:         0 auto;
+  width:              800px;
+  margin:             0 auto;
 }
 #field .row {
   text-align:     center;
@@ -73,13 +105,21 @@ body {
   display:        inline-block;
 }
 #field .cell.target {
-  -webkit-transition: transform 500ms ease;
-  -moz-transition:    transform 500ms ease;
-  -ms-transition:     transform 500ms ease;
-  -o-transition:      transform 500ms ease;
+  -webkit-transition: -webkit-transform 500ms ease;
+  -moz-transition:    -moz-transform 500ms ease;
+  -ms-transition:     -ms-transform 500ms ease;
+  -o-transition:      -o-transform 500ms ease;
   transition:         transform 500ms ease;
+  -webkit-transform:  scale(1) rotate(0deg);
+  -moz-transform:     scale(1) rotate(0deg);
+  -ms-transform:      scale(1) rotate(0deg);
+  -o-transform:       scale(1) rotate(0deg);
   transform:          scale(1) rotate(0deg);
 }
 #field.game-over .target {
+  -webkit-transform:  scale(1.1) rotate(3deg);
+  -moz-transform:     scale(1.1) rotate(3deg);
+  -ms-transform:      scale(1.1) rotate(3deg);
+  -o-transform:       scale(1.1) rotate(3deg);
   transform:          scale(1.1) rotate(3deg);
 }

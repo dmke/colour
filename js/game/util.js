@@ -1,3 +1,5 @@
+'use strict';
+
 /** Some utility functions. */
 window.Util = {
   /** Returns a random integer from [min..max). */

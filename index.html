@@ -2,20 +2,25 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=800, initial-scale=1.0">
+    <meta name="viewport" content="width=960, initial-scale=1.0">
     <title>Is your screen clean?</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
 
   <body>
     <div id="points"></div>
+    <div id="difficulty">
+      <button type="button" class="current" data-difficulty="0">easy mode</button>
+      <button type="button" data-difficulty="1">normal</button>
+      <button type="button" data-difficulty="2">hard core</button>
+    </div>
     <div id="field"></div>
     <script src="./js/vendor/jquery-2.1.1.js"></script>
     <script src="./js/vendor/stylesheet.js"></script>
-    <script src="./js/vendor/cookie-jar.js"></script>
     <script src="./js/game/util.js"></script>
     <script src="./js/game/hsl.js"></script>
-    <script src="./js/game/level.js"></script>
+    <script src="./js/game/difficulty.js"></script>
+    <script src="./js/game/stage.js"></script>
     <script src="./js/game/game.js"></script>
     <!-- <script src="./game.min.js"></script> -->
   </body>
